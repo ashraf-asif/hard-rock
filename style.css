@@ -35,3 +35,13 @@ body {
 	width: 50px;
 	margin: auto;
 }
+
+.song-logo {
+	height: 80px;
+	border-radius: 10px;
+}
+
+.artist-logo {
+	height: 30px;
+	border-radius: 50%;
+}

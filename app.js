@@ -31,16 +31,28 @@ const displayData = (data) => {
 	songs.slice(0, 10).map((song) => {
 		const songTitle = song.title;
 		const artistName = song.artist.name;
+		const songLogo = song.album.cover_medium;
+		const artistLogo = song.artist.picture_small;
 
 		searchResults.innerHTML += `<div class="single-result row align-items-center my-3 p-3">
-                                  <div class="col-md-9">
-                                    <h3 class="song-title">${songTitle}</h3>
-                                    <p class="artist-name lead">Album by <span>${artistName}</span></p>
-                                  </div>
-                                  <div class="col-md-3 text-md-right text-center">
-                                    <h1 class="get-lyrics btn btn-success" onclick="showLyrics(this)">Get Lyrics</h1>
-                                  </div>
-                               </div>`;
+	                                <div class="col-md-9">
+		                                <div class="row">
+			                                <div class="col-md-2">
+				                                <img class="song-logo" src="${songLogo}">
+			                                </div>
+			                                <div class="col-md-10">
+				                                <h2 class="song-title">${songTitle}</h2>
+                                        <p class="artist-name lead">
+                                          <img class="artist-logo" src="${artistLogo}">
+                                          <span>${artistName}</span>
+                                        </p>
+                                      </div>
+                                    </div>
+		                              </div>
+	                                <div class="col-md-3 text-md-right text-center">
+	                              	  <h1 class="get-lyrics btn btn-success" onclick="showLyrics(this)">Get Lyrics</h1>
+	                                </div>
+                                </div>`;
 	});
 };
 
@@ -61,10 +73,10 @@ const getLyrics = (artist, title) => {
 		.then((lyrics) => {
 			const currentSongLyrics = lyrics.lyrics;
 			songLyrics.innerHTML = `<div class="single-lyric text-center">
-           <h2 class="close-lyrics" onclick="closeLyrics()">&#10005</h2>
-           <h2 class="text-success mb-4">${artist} - ${title}</h2>
-           <pre class="lyric text-white">${currentSongLyrics}</pre>
-         </div>`;
+                                <h2 class="close-lyrics" onclick="closeLyrics()">&#10005</h2>
+                                <h2 class="text-success mb-4">${artist} - ${title}</h2>
+                                <pre class="lyric text-white">${currentSongLyrics}</pre>
+                              </div>`;
 		});
 
 	searchResults.style.display = "none";
