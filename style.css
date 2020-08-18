@@ -13,11 +13,6 @@ body {
 	border-radius: 1.5rem;
 	padding: 9px 20px;
 }
-
-.btn-previous {
-	background: rgba(255, 255, 255, 0.2);
-	color: #ffffff;
-}
 .navbar-toggler {
 	border: none;
 }
@@ -35,7 +30,8 @@ body {
 	border-radius: 15px;
 }
 
-/* .single-lyric {
-	height: 0;
-	overflow: hidden;
-} */
+.close-lyrics {
+	cursor: pointer;
+	width: 50px;
+	margin: auto;
+}
