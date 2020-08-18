@@ -33,7 +33,7 @@ const displayData = (data) => {
 		const artistName = song.artist.name;
 		const songLogo = song.album.cover_medium;
 		const artistLogo = song.artist.picture_small;
-		const songLink = song.preview.replace(/^http:\/\//i, "https://");
+		const songLink = song.preview;
 
 		searchResults.innerHTML += `<div class="single-result row align-items-center my-3 p-3">
 	                                <div class="col-md-5">
