@@ -32,8 +32,8 @@ const displayData = (data) => {
 		const songTitle = song.title;
 		const artistName = song.artist.name;
 		const songLogo = song.album.cover_medium;
-    const artistLogo = song.artist.picture_small;
-    const songLink = song.preview;
+		const artistLogo = song.artist.picture_small;
+		const songLink = song.preview.replace(/^http:\/\//i, "https://");
 
 		searchResults.innerHTML += `<div class="single-result row align-items-center my-3 p-3">
 	                                <div class="col-md-5">
@@ -53,7 +53,6 @@ const displayData = (data) => {
                                   <div class="col-md-5 d-flex flex-column align-items-center justify-content-start">
                                     <h6>Song Preview</h6>
                                     <audio controls>
-                                      <source src="horse.ogg" type="audio/ogg">
                                       <source src="${songLink}" type="audio/mpeg">
                                         Your browser does not support the audio tag.
                                     </audio>
