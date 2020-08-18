@@ -32,24 +32,33 @@ const displayData = (data) => {
 		const songTitle = song.title;
 		const artistName = song.artist.name;
 		const songLogo = song.album.cover_medium;
-		const artistLogo = song.artist.picture_small;
+    const artistLogo = song.artist.picture_small;
+    const songLink = song.preview;
 
 		searchResults.innerHTML += `<div class="single-result row align-items-center my-3 p-3">
-	                                <div class="col-md-9">
+	                                <div class="col-md-5">
 		                                <div class="row">
-			                                <div class="col-md-2">
+			                                <div class="col-md-3">
 				                                <img class="song-logo" src="${songLogo}">
 			                                </div>
-			                                <div class="col-md-10">
-				                                <h2 class="song-title">${songTitle}</h2>
+			                                <div class="col-md-9">
+				                                <h3 class="song-title">${songTitle}</h3>
                                         <p class="artist-name lead">
                                           <img class="artist-logo" src="${artistLogo}">
                                           <span>${artistName}</span>
                                         </p>
                                       </div>
                                     </div>
-		                              </div>
-	                                <div class="col-md-3 text-md-right text-center">
+                                  </div>
+                                  <div class="col-md-5 d-flex flex-column align-items-center justify-content-start">
+                                    <h6>Song Preview</h6>
+                                    <audio controls>
+                                      <source src="horse.ogg" type="audio/ogg">
+                                      <source src="${songLink}" type="audio/mpeg">
+                                        Your browser does not support the audio tag.
+                                    </audio>
+                                  </div>
+	                                <div class="col-md-2 text-md-right text-center">
 	                              	  <h1 class="get-lyrics btn btn-success" onclick="showLyrics(this)">Get Lyrics</h1>
 	                                </div>
                                 </div>`;
