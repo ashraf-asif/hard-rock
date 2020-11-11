@@ -1,8 +1,10 @@
 body {
 	color: #ffffff;
+	height: auto;
+	width: 100vw;
 	background: #13141b url(images/bg-image.png) no-repeat fixed;
+	background-size: cover;
 }
-
 .form-control {
 	background-color: rgba(255, 255, 255, 0.2);
 	padding: 22px;
